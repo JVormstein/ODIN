@@ -10,6 +10,7 @@
 *.log
 *.lock
 
+env
 /auth/keys.config
 /reports/*
 /pyfoca-downloads/*

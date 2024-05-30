@@ -8,6 +8,8 @@
 
 ### Current version: v2.0.0 "Huginn"
 
+*I'm in the process of rewriting and updating the tool*
+
 ODIN is Python tool for automating intelligence gathering, asset discovery, and reporting. Remember, check the dev branch for the bleeding edge, and feedback is welcome!
 
 See the GitHub wiki for details and installation and setup instructions.
