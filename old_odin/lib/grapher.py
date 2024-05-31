@@ -11,7 +11,7 @@ import sys
 import sqlite3
 
 import click
-from neo4j.v1 import GraphDatabase
+# from neo4j.v1 import GraphDatabase
 
 # Try importing helpers.py two different ways to allow for grapher.py to be executed independently
 try:

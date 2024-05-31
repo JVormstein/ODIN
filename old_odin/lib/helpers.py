@@ -10,7 +10,7 @@ import configparser
 
 import click
 from IPy import IP
-from neo4j.v1 import GraphDatabase
+# from neo4j.v1 import GraphDatabase
 from netaddr import IPNetwork,iter_iprange
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -84,6 +84,7 @@ def setup_gdatabase_conn():
     ODIN data.
     """
     try:
+        1/0
         database_uri = config_section_map("GraphDatabase")["uri"]
         database_user = config_section_map("GraphDatabase")["username"]
         database_pass = config_section_map("GraphDatabase")["password"]

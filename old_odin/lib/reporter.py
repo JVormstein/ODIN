@@ -17,7 +17,9 @@ from time import sleep
 import click
 from xml.etree import ElementTree as ET
 
-from lib import subdomains,takeovers,whois,dns,shodantools,cloud,fullcontact,harvester,filehunter,helpers,screenshots,typosquat,hibp
+from lib import takeovers,whois,dns,shodantools,cloud,fullcontact,harvester,filehunter,helpers,screenshots,typosquat,hibp
+
+#subdomains
 
 
 class Reporter(object):
@@ -48,7 +50,7 @@ class Reporter(object):
         self.harvester = harvester.Harvester()
         self.cloud_hunter = cloud.BucketHunter()
         self.full_contact = fullcontact.FullContact()
-        self.cert_searcher = subdomains.CertSearcher()
+        # self.cert_searcher = subdomains.CertSearcher()
         self.lookalike_toolkit = typosquat.TypoCheck()
         self.shodan_toolkit = shodantools.ShodanTools()
         self.takeover_analzyer = takeovers.TakeoverChecks()
@@ -542,6 +544,7 @@ so this one has been skipped for WhoXY reverse lookups.".format(org_name),fg="ye
                             collected_subdomains.append(result)
                 # Try to collect certificate data for the domain
                 try:
+                    1/0
                     # Search for certificates catalogued by censys.io
                     cert_data = self.cert_searcher.search_censys_certificates(domain)
                     if cert_data:
@@ -577,6 +580,7 @@ a heads up!",fg="yellow")
                     pass
                 bar.update(.2)
                 try:
+                    1/0
                     # Search for certificates catalogued by crt.sh
                     cert_data = self.cert_searcher.search_crtsh(domain,True)
                     if cert_data:
@@ -602,7 +606,8 @@ a heads up!",fg="yellow")
                 bar.update(.2)
                 # Filter out any uninteresting domains caught in the net and remove duplicates
                 # Also removes wildcards, i.e. *.google.com
-                collected_subdomains = self.cert_searcher.filter_subdomains(domain,collected_subdomains)
+                # collected_subdomains = self.cert_searcher.filter_subdomains(domain,collected_subdomains)
+                collected_subdomains = []
                 unique_collected_subdomains = set(collected_subdomains)
                 # Resolve the subdomains to IP addresses
                 for unique_sub in unique_collected_subdomains:
